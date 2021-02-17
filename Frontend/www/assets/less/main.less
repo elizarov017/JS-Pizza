@@ -20,6 +20,7 @@ body {
     width: 83%;
     z-index: 5;
     border-radius: 0%;
+    text-align: left;
   }
 
   .brand {
@@ -51,4 +52,91 @@ body {
   .log-in {
     background-color: @mainColor;
     margin-top: 6px;
+    opacity: 1 !important;
+    position: fixed;
+    z-index: 7;
+    left: 20px;
+  }
+
+  .a0 {
+    display: list-item;
+    text-align: left;
+    width: 50px;
+    opacity: 1;
+  }
+
+  .a1 {
+    font-size:medium;
+    opacity: 1;
+  }
+
+  .a2 {
+    font-size:small;
+    opacity: 1;
+  }
+
+  .a3 {
+    font-size: large;
+    opacity: 1;
+  }
+
+  .a4 {
+    width:80px; 
+    background-color: aliceblue;
+    opacity: 1;
+  }
+
+
+  @media(max-width: 1200px) {
+      .a1 {
+        display: none;;
+      }
+      .a4 {
+        // width: 50px;
+      }
+  }
+
+  @media(max-width: 974px) {
+    .a2 {
+      display: none;
+    }
+    .a3 {
+      // width: 90px;
+      // font-size: 12px;
+      // margin-left: 110px;
+      // margin-right: 0px !important;
+      // margin-bottom: 0px;
+      
+    }
+
+    .a0 {
+      text-align: left;
+    }
+
+    .a {
+      color:darkgray;
+    }
+
+    
+    
+  }
+
+  @media(max-width: 772px) {
+    .a3 {
+      display: none;
+    }
+
+    .a4 {
+      display: none;
+    }
+
+    .log-in {
+      // margin-top: 0px;
+    }
+
+    .a0 {
+      // margin-right: 10%;
+      text-align: left;
+      
+    }
   }
