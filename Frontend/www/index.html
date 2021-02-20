@@ -19,22 +19,47 @@
     <!-- style=" display: none;" -->
 </head>
 <body>
-    <div class="col-md-10" style="padding: 0px;">
+<div>
+    <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+    <div class="cart col-md-3" style="overflow-y: scroll; padding: 0px;">
+        <div class="row" style="position: fixed; line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
+            <div class="col-md-2" style="padding: 0px;">
+                <span style="font-size: large; font-weight: bold;">Залишилося 
+                <span class="badge" style=" font-size: default; background-color: #ea862e;">8</span></span>
+            </div>
+            <div class="col-md-1" style="padding: 0px;">
+                <span id="delete-all" style="margin-right: 15px; font-size: small;"> Видалити весь товар </span>
+            </div>
+        </div>
+        
+        <div id="cart" >
+
+        
+    
+        </div>
+    </div>
+    <div class="col-md-9" style="padding: 0px;">
         <div class="brand" > <p style="font-size: large;">PIZZA</p> <p>KMA</p><img src="assets/images/discount.svg" style="transform: scale(1, -2) translateY(-7px); z-index: 6;"></div>
-<nav class="navbar navbar-inverse head" style=" opacity: 0.8;">
-    <div class="container-fluid" style=" line-height: 100%;">
-        <p class="navbar-text a4"> </p>
-        <p class="navbar-text a3">(044) 222 5 222</p>
-        <p class="navbar-text a2">24 години/7 днів на тиждень</p>
-        <p class="navbar-text a1">Безкоштовна доставка</p>
-        <nav class="nav navbar-nav navbar-right center-block">
-            
+        <div class="discount" >
+            <img src="assets/images/discount.svg" style="transform: scale(1, 2) translateY(-10px); z-index: 6;"> 
+            <p style="font-size: large; transform: translateY(-10px);">ЗНИЖКА</p> 
+            <p style="transform: translateY(-10px);">на все</p>
+            <p style="transform: translateY(-13px);">-------</p>
+            <p style="transform: translateY(-14px); font-size: large;">-20%</p> 
+        </div>
+    <nav class="navbar navbar-inverse head col-md-9" style="padding: 0px; opacity: 0.8;">
+        <div class="container-fluid" style="padding: 0px; line-height: 100%;">
+            <p class="navbar-text a4"> </p>
+            <p class="navbar-text a3">(044) 222 5 222</p>
+            <p class="navbar-text a2">24 години/7 днів на тиждень</p>
+            <p class="navbar-text a1">Безкоштовна доставка</p>            
         </nav>
       </div>
     </div>
-  </nav>
-  <button class="btn btn-warning pull-left log-in"> Ввійти </button>
-<div class="container">
+    <div class="container-fluid col-md-9" style="text-align: right; z-index: 7; position: fixed;">
+        <button class="btn btn-warning log-in"> Ввійти </button>
+    </div>
+    <div class="container col-md-9">
     
     <div class= "introduction" style="text-align: center; padding-top: 50px;"><h1>Усі піци<span class="badge" style=" font-size: large; background-color: #ea862e;">8</span> </h1></div>
     <div class="row" style="padding-top: 10px">
@@ -86,7 +111,7 @@
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail pizza-card">
                 <img src="assets/images/pizza_3.jpg">
-
+                
                 <div class="caption"><h3>Thumbnail label</h3>
 
                     <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -99,9 +124,10 @@
             </div>
         </div>
     </div>
+    </div>
 </div>
-</div>
-<div id="cart" class="col-md-2"></div>
+
+
 
 <!-- jQuery JavaScript -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>

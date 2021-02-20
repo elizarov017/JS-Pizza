@@ -2,9 +2,13 @@
   img {
     max-width: 250px;
   }
+  span img {
+    width: 20px;
+    height: 20px;
+  }
 
   .thumbnail {
-    height: 500px;
+    height: 610px;
   }
 
   h3 {
@@ -30,7 +34,33 @@
 
   .description {
     font-size: 16px;
-    height: 80px;
+    height: 70px;
+  }
+
+  .buy-menu {
+    text-align: center;
+  }
+
+  .buy-pizza {
+    display: inline-block;
+    text-align: center;
+    font-size: large;
+    padding: 15px;
+  }
+
+  button, button:focus {
+    background-color: @mainColor;
+    outline: none;
+    border: none;
+  }
+
+  button:hover  {
+    background-color: lighten(@mainColor, 5%);
+  }
+
+  button:active, button:active:hover {
+    background-color: darken(@mainColor, 5%);
+    outline: none;
   }
 }
 
