@@ -31,10 +31,19 @@ a {
 
   .head {
     position:fixed;
-    // width: 83%;
+    height: 50px;;
     z-index: 5;
     border-radius: 0%;
     text-align: left;
+    padding: 0px; 
+    opacity: 0.8; 
+    background-color: black;
+    
+  }
+
+  .head span {
+    line-height: 45px;
+    margin-left: 20px;
   }
 
   .brand {
@@ -77,11 +86,28 @@ a {
   }
 
 
-  .nav-pills > li.active > a,
-  .nav-pills > li.active > a:hover,
-  .nav-pills > li.active > a:focus {
-    color: #fff;
+  .menu {
+    border: none;
+    outline: none;
+    background-color: #fffff5;
+  }
+
+  .menu:hover {
+    background-color: rgb(240, 240, 240);
+  }
+
+  .menu a {
+    text-decoration: none;
+ 
+  }
+
+  .menu a:hover {
+    color: black;
+  }
+
+  .active , .active a{
     background-color: @mainColor;
+    color: white;
   }
 
   .log-in {
@@ -90,11 +116,24 @@ a {
     opacity: 1 !important;
     position:relative;
     z-index: 7;
-    right: 20px;
   }
 
-  li {
-    cursor: pointer;
+
+  .buy-all, .buy-all:focus {
+    color: white;
+    font-size: large;
+    background-color: @mainColor;
+    outline: none;
+    border: none;
+  }
+
+  .buy-all:hover  {
+    background-color: lighten(@mainColor, 5%);
+  }
+
+  .buy-all:active, .buy-all:active:hover {
+    background-color: darken(@mainColor, 5%);
+    outline: none;
   }
 
   .a0 {
@@ -120,9 +159,8 @@ a {
   }
 
   .a4 {
-    width:80px; 
-    background-color: aliceblue;
-    opacity: 1;
+    margin-left: 100px;
+    visibility: hidden;
   }
 
 
@@ -140,11 +178,11 @@ a {
       display: none;
     }
     .a3 {
-      // width: 90px;
-      // font-size: 12px;
-      // margin-left: 110px;
-      // margin-right: 0px !important;
-      // margin-bottom: 0px;
+      width: 90px;
+      font-size: 12px;
+      margin-left: 110px;
+      margin-right: 0px !important;
+      margin-bottom: 0px;
       
     }
 
@@ -160,22 +198,13 @@ a {
     
   }
 
-  @media(max-width: 772px) {
+  @media(max-width: 600px) {
     .a3 {
       display: none;
     }
 
-    .a4 {
-      display: none;
-    }
-
-    .log-in {
-      // margin-top: 0px;
-    }
-
-    .a0 {
-      // margin-right: 10%;
-      text-align: left;
-      
+    .delete-all {
+      font-size: small;
+      top: 30px;
     }
   }

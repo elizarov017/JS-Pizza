@@ -20,25 +20,34 @@
 </head>
 <body>
 <div>
-    <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
-    <div class="cart col-md-3" style="overflow-y: scroll; padding: 0px;">
-        <div class="row" style="position: fixed; line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
-            <div class="col-md-2" style="padding: 0px;">
-                <span style="font-size: large; font-weight: bold;">Залишилося 
+    <div class="cart col-md-3 col-md-3 col-sm-4 col-xs-5" style="overflow-y: scroll; padding: 0px;  box-shadow: 0 0 5px rgba(0,0,0,0.5);">
+        <div class="row" style="position: fixed; margin-left:0px;  line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
+            <div class="col-md-2  col-sm-10" style="padding: 0px; display: inline-block;">
+                <span style="font-size: large; font-weight: bold; padding-left: 20px;">Залишилося 
                 <span class="badge" style=" font-size: default; background-color: #ea862e;">8</span></span>
             </div>
-            <div class="col-md-1" style="padding: 0px;">
-                <span id="delete-all" style="margin-right: 15px; font-size: small;"> Видалити весь товар </span>
+            <div class="delete-all" style="padding: 0px; display: inline-block; position:fixed; right:10px;">
+                <span id="clear-cart" style="font-size: medium; color: darkgray;"> Очистити </span>
             </div>
         </div>
-        
+        <div style="position: fixed; bottom: 0px; background-color: #fffff5; height: 150px; width: 100%; display: block; box-sizing: border-box;">
+            <!-- <div style="padding-top: 5px; display: inline-block;"> -->
+                <span style="font-size: large; font-weight: bold; padding-left: 20px; margin-top: 20px;">Сума замовлення: 
+                </span>
+            <!-- </div> -->
+            <div style="padding-right: 10px; line-height: 40px;  position: fixed; right: 5px">
+                <span style="font-size: xx-large; font-weight: bold;"> 200</span>грн 
+            </div> <br>
+            <button class="col-md-3 col-md-3 col-sm-4 col-xs-5 buy-all" style="position: fixed; bottom: 20px; padding: 15px;">Купити</button>
+        </div>
+        <div style="height: 100px; width: 100%; display: block;"></div>
         <div id="cart" >
-
+            
         
     
         </div>
     </div>
-    <div class="col-md-9" style="padding: 0px;">
+    <div class="col-md-9 col-md-9 col-sm-8 col-xs-7" style="padding: 0px;">
         <div class="brand" > <p style="font-size: large;">PIZZA</p> <p>KMA</p><img src="assets/images/discount.svg" style="transform: scale(1, -2) translateY(-7px); z-index: 6;"></div>
         <div class="discount" >
             <img src="assets/images/discount.svg" style="transform: scale(1, 2) translateY(-10px); z-index: 6;"> 
@@ -47,35 +56,40 @@
             <p style="transform: translateY(-13px);">-------</p>
             <p style="transform: translateY(-14px); font-size: large;">-20%</p> 
         </div>
-    <nav class="navbar navbar-inverse head col-md-9" style="padding: 0px; opacity: 0.8;">
+    <nav class="head col-md-9 col-md-9 col-sm-8 col-xs-7">
         <div class="container-fluid" style="padding: 0px; line-height: 100%;">
-            <p class="navbar-text a4"> </p>
-            <p class="navbar-text a3">(044) 222 5 222</p>
-            <p class="navbar-text a2">24 години/7 днів на тиждень</p>
-            <p class="navbar-text a1">Безкоштовна доставка</p>            
+            <div style="display: inline-block; width: 120px;"></div>
+            <span class="a3">(044) 222 5 222</span>
+            <span class="a2">24 години/7 днів на тиждень</span>
+            <span class="a1">Безкоштовна доставка</span>            
         </nav>
       </div>
     </div>
-    <div class="container-fluid col-md-9" style="text-align: right; z-index: 7; position: fixed;">
+    <div class="col-md-9 col-md-9 col-sm-8 col-xs-7" style="text-align: right; z-index: 7; position: fixed;">
         <button class="btn btn-warning log-in"> Ввійти </button>
     </div>
-    <div class="container col-md-9">
+    <div class="container col-md-9 col-md-9 col-sm-8 col-xs-7">
     
-    <div class= "introduction" style="text-align: center; padding-top: 50px;"><h1>Усі піци<span class="badge" style=" font-size: large; background-color: #ea862e;">8</span> </h1></div>
-    <div class="row" style="padding-top: 10px">
-        
-        
-            <ul class="nav nav-pills center-block" style="text-align: center; width: 450px;">
-                <li role="presentation" class="active"><a href="#">Усі</a></li>
-                <li role="presentation"><a>М'ясні</a></li>
-                <li role="presentation"><a>З ананасами</a></li>
-                <li role="presentation"><a>Грибні</a></li>
-                <li role="presentation"><a>Рибні</a></li>
-                <li role="presentation"><a>Вега</a></li>
-              </ul>       
-        
+    <div class= "introduction" style="text-align: center; padding-top: 70px;"><h1>Усі піци<span class="badge" style=" font-size: large; background-color: #ea862e;">8</span> </h1></div>
+    
+    <div class="nav-menu" style="padding-top: 10px; text-align: center;">
+        <div class="row">
+            <div class="col-xl-3 col-md-3 col-sm-0 col-xs-0"></div>
+            <!-- padding-left: 5%; -->
+            <div class="nav nav-pills col-xl-6 col-md-6 col-sm-0 col-xs-0" style="padding-left: 15px;">
+                <div class="" style="text-align: center;">
+                    <button class="btn-sm menu active " style=""><a href="#">Усі</a></button>
+                    <button class="btn-sm menu" filter-data=""><a>М'ясні</a></button>
+                    <button class="btn-sm menu" filter-data=""><a>З ананасами</a></button>
+                    <button class="btn-sm menu" filter-data=""><a>Грибні</a></button>
+                    <button class="btn-sm menu" filter-data=""><a>Рибні</a></button>
+                    <button class="btn-sm menu" filter-data=""><a>Вега</a></button>
+                </div>  
+            </div>       
+            <div class="col-xl-3 col-md-3 col-sm-0 col-xs-0"></div>
+        </div>
     </div>
-    <div class="row" id="pizza_list" style="padding-top: 40px">
+    <div class="row" id="pizza_list" style="padding-top: 60px">
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail pizza-card">
                 <img src="assets/images/pizza_1.jpg">

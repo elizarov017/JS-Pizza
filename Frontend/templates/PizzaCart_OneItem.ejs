@@ -1,5 +1,5 @@
 <div class="cart-item">
-    <%= pizza.title %> (<%= size %>)
+    <%= pizza.title %> (<%= size == 'small_size'? 'Мала' : 'Велика'%>)
     <div>Ціна: <%= pizza[size].price %> грн.</div>
     <div>
         <button class="btn btn-danger minus">-</button>
