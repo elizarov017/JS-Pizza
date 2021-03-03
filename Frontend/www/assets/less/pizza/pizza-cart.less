@@ -1,3 +1,60 @@
 .cart-item {
-    
+background-color: white;
+box-sizing: border-box;
+padding: 20px;
+font-size: medium;
+border: solid 1px rgb(214, 214, 214);
+
+button {
+    border-radius: 50%;
+    outline: none;
+}
+
+button:active, button:focus, button:active:hover {
+    outline: none;
+
+  }
+
+
+    .pizza-icon {
+        position: absolute;
+        right: -80px;
+        width: 150px;
+        transform: translateY(-17.5px);
+        padding-left: 0px;
+    }
+
+    .p-name {
+        color: @mainColor;
+        font-size: large;
+    }
+
+    // .delete-pizza {
+    //     margin-left: 10%;
+    // }
+
+    @media(max-width: 1100px) {
+        .p-name {
+            font-size: medium;
+        }
+        .pizza-icon {
+            transform: translateX(30px);
+            transform: translateY(-17.5px);
+        }
+    }
+
+    @media (max-width: 974px) {
+        .p-name {
+            font-size: medium;
+        }
+    }
+
+    @media (max-width: 624px) {
+        .p-name {
+            font-size: medium;
+        }
+        .delete-pizza {
+            margin-left: 30px;
+        }
+    }
 }

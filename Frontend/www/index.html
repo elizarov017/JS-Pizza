@@ -21,15 +21,25 @@
 <body>
 <div>
     <div class="cart col-md-3 col-md-3 col-sm-4 col-xs-5" style="overflow-y: scroll; padding: 0px;  box-shadow: 0 0 5px rgba(0,0,0,0.5);">
-        <div class="row" style="position: fixed; margin-left:0px;  line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
+        <div class="row" style="position: fixed; z-index: 8; margin-left:0px;  line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
             <div class="col-md-2  col-sm-10" style="padding: 0px; display: inline-block;">
-                <span style="font-size: large; font-weight: bold; padding-left: 20px;">Залишилося 
-                <span class="badge" style=" font-size: default; background-color: #ea862e;">8</span></span>
+                <span style="font-size: large; font-weight: bold; padding-left: 20px;">Замовлення 
+                <span class="badge" style=" font-size: default; background-color: #ea862e;">0</span>
             </div>
             <div class="delete-all" style="padding: 0px; display: inline-block; position:fixed; right:10px;">
                 <span id="clear-cart" style="font-size: medium; color: darkgray;"> Очистити </span>
             </div>
         </div>
+        <div style="height: 100px; width: 100%; display: block;"></div>
+        
+        <div id="cart" >
+            
+        
+    
+        </div>
+
+        <div style="height: 122px; width: 100%; display: block;"></div>
+
         <div style="position: fixed; bottom: 0px; background-color: #fffff5; height: 150px; width: 100%; display: block; box-sizing: border-box;">
             <!-- <div style="padding-top: 5px; display: inline-block;"> -->
                 <span style="font-size: large; font-weight: bold; padding-left: 20px; margin-top: 20px;">Сума замовлення: 
@@ -40,12 +50,7 @@
             </div> <br>
             <button class="col-md-3 col-md-3 col-sm-4 col-xs-5 buy-all" style="position: fixed; bottom: 20px; padding: 15px;">Купити</button>
         </div>
-        <div style="height: 100px; width: 100%; display: block;"></div>
-        <div id="cart" >
-            
         
-    
-        </div>
     </div>
     <div class="col-md-9 col-md-9 col-sm-8 col-xs-7" style="padding: 0px;">
         <div class="brand" > <p style="font-size: large;">PIZZA</p> <p>KMA</p><img src="assets/images/discount.svg" style="transform: scale(1, -2) translateY(-7px); z-index: 6;"></div>
@@ -70,7 +75,7 @@
     </div>
     <div class="container col-md-9 col-md-9 col-sm-8 col-xs-7">
     
-    <div class= "introduction" style="text-align: center; padding-top: 70px;"><h1>Усі піци<span class="badge" style=" font-size: large; background-color: #ea862e;">8</span> </h1></div>
+    <div class= "introduction" style="text-align: center; padding-top: 70px;"><span class="filter-name" style="font-size: 48px;">Усі піци</span><span class="badge" style="border-radius: 50%; margin-bottom: 15px; padding-left: 10px; padding-right: 10px; font-size: x-large; background-color: #ea862e;">8</span> </div>
     
     <div class="nav-menu" style="padding-top: 10px; text-align: center;">
         <div class="row">
