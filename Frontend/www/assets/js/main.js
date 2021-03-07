@@ -3,6 +3,13 @@
  * Created by diana on 12.01.16.
  */
 
+ var filters = {
+  "all" : [],
+  "mushroom" : ["шампінйони"],
+  "sea" : [],
+  "vega" : []
+ };
+
 var pizza_info = [
     {
         id:1,
@@ -224,23 +231,52 @@ var $cart = $("#cart");
 
 function addToCart(pizza, size) {
     //Додавання однієї піци в кошик покупок
-
+    let increased = false;
+    // console.log(Cart);
     //Приклад реалізації, можна робити будь-яким іншим способом
+  Cart.forEach(function (item) {
+    if (item.pizza == pizza && item.size == size) {
+      item.quantity++;
+      increased = true;
+    }
+  });
+
+  if (!increased) {
     Cart.push({
         pizza: pizza,
         size: size,
         quantity: 1
     });
 
-    //Оновити вміст кошика на сторінці
-    updateCart();
+    
+  }
+  increaseCountCart();
+
+  //Оновити вміст кошика на сторінці
+  updateCart();
+}
+
+function increaseCountCart(num) {
+  let count = parseInt($(".cart-count").text());
+  if (num == undefined) $(".cart-count").text(++count);
+  else $(".cart-count").text(count + num);
+  // console.log(num);
+}
+
+function reduceCountCart(num) {
+  let count = parseInt($(".cart-count").text());
+  if (num == undefined) $(".cart-count").text(--count);
+  else $(".cart-count").text(count - num);
 }
 
 function removeFromCart(cart_item) {
     //Видалити піцу з кошика
     //TODO: треба зробити
+    // console.log(cart_item);
     if (Cart.indexOf(cart_item) != -1) {
       Cart.splice(Cart.indexOf(cart_item), 1);
+     
+      
     }
     //Після видалення оновити відображення
     updateCart();
@@ -261,6 +297,7 @@ $("#clear-cart").click(function() {
 
   newCart.forEach(function(item) {
     removeFromCart(item)
+    reduceCountCart(item.quantity);
   });
 });
 
@@ -276,16 +313,26 @@ function updateCart() {
     //Очищаємо старі піци в кошику
     $cart.html("");
 
+
+    let fullPrice = 0;
+    Cart.forEach(function(item) {
+      fullPrice += item.pizza[item.size].price * item.quantity;
+    })
+    $(".full_price").text(fullPrice);
+
     //Онволення однієї піци
     function showOnePizzaInCart(cart_item) {
         var html_code = Templates.PizzaCart_OneItem(cart_item);
-
+        
         var $node = $(html_code);
 
         $node.find(".plus").click(function(){
             //Збільшуємо кількість замовлених піц
             cart_item.quantity += 1;
-
+            increaseCountCart();
+            console.log(cart_item);
+            fullPrice = 
+            
             //Оновлюємо відображення
             updateCart();
         });
@@ -293,7 +340,7 @@ function updateCart() {
         $node.find(".minus").click(function(){
           //Збільшуємо кількість замовлених піц
           cart_item.quantity -= 1;
-
+          reduceCountCart();
           if (cart_item.quantity == 0) {
 
             removeFromCart(cart_item);
@@ -305,6 +352,7 @@ function updateCart() {
 
       $node.find(".delete-pizza").click(function(){
         //Збільшуємо кількість замовлених піц
+        reduceCountCart(cart_item.quantity);
         cart_item.quantity = 0;
         removeFromCart(cart_item);
 
@@ -356,17 +404,31 @@ function showPizzaList(list) {
 
         $pizza_list.append($node);
     }
-
+    $(".count").text(list.length);
     list.forEach(showOnePizza);
 }
+
+$(".menu").click(function () {
+  let filter = this.getAttribute("filter-data")
+  $(".active").removeClass("active");
+  $(this).addClass("active");
+  filterPizza(filter);
+})
 
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
 
+    // $()
+
     Pizza_List.forEach(function(pizza){
         //Якщо піка відповідає фільтру
-        if (pizza.type == filter) pizza_shown.push(pizza);
+        console.log(pizza);
+        
+
+        if (filter == "vega" && pizza.type == "Вега піца") pizza_shown.push(pizza);
+
+        if (pizza.content[filter] != undefined || filter == "all") pizza_shown.push(pizza);
 
         
 

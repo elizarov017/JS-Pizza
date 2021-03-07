@@ -114,9 +114,17 @@ a {
     color: black;
   }
 
-  .active , .active a{
+  .active {
     background-color: @mainColor;
     color: white;
+  }
+
+  .active a , .active a:hover{
+    color: white;
+  }
+
+  .active:hover {
+    background-color: lighten(@mainColor, 5%);
   }
 
   .log-in {

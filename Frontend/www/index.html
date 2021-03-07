@@ -24,7 +24,7 @@
         <div class="row" style="position: fixed; z-index: 8; margin-left:0px;  line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
             <div class="col-md-2  col-sm-10" style="padding: 0px; display: inline-block;">
                 <span style="font-size: large; font-weight: bold; padding-left: 20px;">Замовлення 
-                <span class="badge" style=" font-size: default; background-color: #ea862e;">0</span>
+                <span class="badge cart-count" style=" font-size: default; background-color: #ea862e;">0</span>
             </div>
             <div class="delete-all" style="padding: 0px; display: inline-block; position:fixed; right:10px;">
                 <span id="clear-cart" style="font-size: medium; color: darkgray;"> Очистити </span>
@@ -46,7 +46,7 @@
                 </span>
             <!-- </div> -->
             <div style="padding-right: 10px; line-height: 40px;  position: fixed; right: 5px">
-                <span style="font-size: xx-large; font-weight: bold;"> 200</span>грн 
+                <span class="full_price" style="font-size: xx-large; font-weight: bold;"> 0</span>грн 
             </div> <br>
             <button class="col-md-3 col-md-3 col-sm-4 col-xs-5 buy-all" style="position: fixed; bottom: 20px; padding: 15px;">Купити</button>
         </div>
@@ -75,7 +75,7 @@
     </div>
     <div class="container col-md-9 col-md-9 col-sm-8 col-xs-7">
     
-    <div class= "introduction" style="text-align: center; padding-top: 70px;"><span class="filter-name" style="font-size: 48px;">Усі піци</span><span class="badge" style="border-radius: 50%; margin-bottom: 15px; padding-left: 10px; padding-right: 10px; font-size: x-large; background-color: #ea862e;">8</span> </div>
+    <div class= "introduction" style="text-align: center; padding-top: 70px;"><span class="filter-name" style="font-size: 48px;">Усі піци</span><span class="badge count" style="border-radius: 50%; margin-bottom: 15px; padding-left: 10px; padding-right: 10px; font-size: x-large; background-color: #ea862e;">8</span> </div>
     
     <div class="nav-menu" style="padding-top: 10px; text-align: center;">
         <div class="row">
@@ -83,12 +83,11 @@
             <!-- padding-left: 5%; -->
             <div class="nav nav-pills col-xl-6 col-md-6 col-sm-0 col-xs-0" style="padding-left: 15px;">
                 <div class="" style="text-align: center;">
-                    <button class="btn-sm menu active " style=""><a href="#">Усі</a></button>
-                    <button class="btn-sm menu" filter-data=""><a>М'ясні</a></button>
-                    <button class="btn-sm menu" filter-data=""><a>З ананасами</a></button>
-                    <button class="btn-sm menu" filter-data=""><a>Грибні</a></button>
-                    <button class="btn-sm menu" filter-data=""><a>Рибні</a></button>
-                    <button class="btn-sm menu" filter-data=""><a>Вега</a></button>
+                    <button class="btn-sm menu active" filter-data="all"><a>Усі</a></button>
+                    <button class="btn-sm menu" filter-data="meat"><a>М'ясні</a></button>
+                    <button class="btn-sm menu" filter-data="mushroom"><a>Грибні</a></button>
+                    <button class="btn-sm menu" filter-data="ocean"><a>Рибні</a></button>
+                    <button class="btn-sm menu" filter-data="vega"><a>Вега</a></button>
                 </div>  
             </div>       
             <div class="col-xl-3 col-md-3 col-sm-0 col-xs-0"></div>
