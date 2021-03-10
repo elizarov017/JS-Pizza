@@ -1,0 +1,40 @@
+<% include common/header.ejs %>
+
+<div class="">
+    <div>
+        <div class="cart col-md-3 col-md-3 col-sm-4 col-xs-5" style="overflow-y: scroll; padding: 0px;  box-shadow: 0 0 5px rgba(0,0,0,0.5);">
+            <div class="row" style="position: fixed; z-index: 8; margin-left:0px;  line-height: 100px; background-color: #fffff5; height: 100px; width: 100%; display: block; box-sizing: border-box;">
+                <div class="col-md-2  col-sm-10" style="padding: 0px; display: inline-block;">
+                    <span style="font-size: large; font-weight: bold; padding-left: 20px;">Замовлення 
+                    <span class="badge cart-count" style=" font-size: default; background-color: #ea862e;">0</span>
+                </div>
+                <div class="delete-all" style="padding: 0px; display: inline-block; position:fixed; right:10px;">
+                    <span id="clear-cart" style="font-size: medium; color: darkgray;"> Очистити </span>
+                </div>
+            </div>
+            <div style="height: 100px; width: 100%; display: block;"></div>
+            
+            <div id="cart" >
+                
+            
+        
+            </div>
+    
+            <div style="height: 122px; width: 100%; display: block;"></div>
+    
+            <div style="position: fixed; bottom: 0px; background-color: #fffff5; height: 150px; width: 100%; display: block; box-sizing: border-box;">
+                <!-- <div style="padding-top: 5px; display: inline-block;"> -->
+                    <span style="font-size: large; font-weight: bold; padding-left: 20px; margin-top: 20px;">Сума замовлення: 
+                    </span>
+                <!-- </div> -->
+                <div style="padding-right: 10px; line-height: 40px;  position: fixed; right: 5px">
+                    <span class="full_price" style="font-size: xx-large; font-weight: bold;"> 0</span>грн 
+                </div> <br>
+                <button class="col-md-3 col-md-3 col-sm-4 col-xs-5 buy-all" style="position: fixed; bottom: 20px; padding: 15px;">Купити</button>
+            </div>
+            
+        </div>
+        
+</div>
+
+<% include common/footer.ejs %>
