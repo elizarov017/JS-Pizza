@@ -283,6 +283,27 @@ var PizzaSize = {
   Small: "small_size"
 };
 
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+
 //Змінна в якій зберігаються перелік піц в кошику
 var Cart = [];
 
@@ -292,7 +313,6 @@ var $cart = $("#cart");
 function addToCart(pizza, size) {
   //Додавання однієї піци в кошик покупок
   let increased = false;
-  // console.log(Cart);
   //Приклад реалізації, можна робити будь-яким іншим способом
 Cart.forEach(function (item) {
   if (item.pizza == pizza && item.size == size) {
@@ -320,7 +340,6 @@ function increaseCountCart(num) {
 let count = parseInt($(".cart-count").text());
 if (num == undefined) $(".cart-count").text(++count);
 else $(".cart-count").text(count + num);
-// console.log(num);
 }
 
 function reduceCountCart(num) {
@@ -331,8 +350,6 @@ else $(".cart-count").text(count - num);
 
 function removeFromCart(cart_item) {
   //Видалити піцу з кошика
-  //TODO: треба зробити
-  // console.log(cart_item);
   if (Cart.indexOf(cart_item) != -1) {
     Cart.splice(Cart.indexOf(cart_item), 1);
    
@@ -345,7 +362,6 @@ function removeFromCart(cart_item) {
 function initialiseCart() {
   //Фукнція віпрацьвуватиме при завантаженні сторінки
   //Тут можна наприклад, зчитати вміст корзини який збережено в Local Storage то показати його
-  //TODO: ...
   
 
   var saved_pizza = Storage.get('cart');
@@ -366,6 +382,12 @@ function initialiseCart() {
 
   updateCart();
 }
+
+$(".brand").click(() => {
+    window.location.href = "../";
+
+});
+
 
 $("#clear-cart").click(function() {
 var newCart = [];
@@ -389,7 +411,6 @@ function updateCart() {
 
   //Очищаємо старі піци в кошику
   $cart.html("");
-
 
   let fullPrice = 0;
   Cart.forEach(function(item) {
@@ -442,6 +463,8 @@ function updateCart() {
 
   Cart.forEach(showOnePizzaInCart);
   Storage.set("cart",	Cart);
+
+
 }
 
 exports.removeFromCart = removeFromCart;
@@ -496,6 +519,20 @@ $(this).addClass("active");
 $(".filter-name").text(this.getAttribute("text") + " піци");
 filterPizza(filter);
 })
+
+let onload = () => {
+    $(".buy-all").addClass("change-order");
+    $(".buy-all").removeClass("buy-all");
+}
+
+$(".buy-all").click(() => {
+    window.location.href = "/order.html";
+    
+    window.onload(() => { 
+        
+    });
+    
+});
 
 function filterPizza(filter) {
   //Масив куди потраплять піци які треба показати

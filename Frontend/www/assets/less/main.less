@@ -62,12 +62,12 @@ a {
     width: 100px;
     height: 65px;
     text-align: center;
-    z-index: 6;
+    z-index: 8;
     position:fixed;
     left: 20px;
     color: aliceblue;
     font-size:x-large;
-    cursor: default;
+    cursor: pointer;
   }
 
   .discount {
@@ -107,7 +107,6 @@ a {
 
   .menu a {
     text-decoration: none;
- 
   }
 
   .menu a:hover {
@@ -127,6 +126,7 @@ a {
     background-color: lighten(@mainColor, 5%);
   }
 
+
   .log-in {
     background-color: @mainColor;
     margin-top: 6px;
@@ -137,19 +137,49 @@ a {
 
 
   .buy-all, .buy-all:focus {
+    box-sizing: border-box;
     color: white;
     font-size: large;
     background-color: @mainColor;
     outline: none;
     border: none;
+    text-align: center;
+    margin: auto;
+    
   }
 
   .buy-all:hover  {
     background-color: lighten(@mainColor, 5%);
+    color: white;
+    text-decoration: none;
+    
   }
 
   .buy-all:active, .buy-all:active:hover {
     background-color: darken(@mainColor, 5%);
+    outline: none;
+  }
+
+  .change-order, .change-order:focus{
+    box-sizing: border-box;
+    color: white;
+    font-size: large;
+    background-color: grey;
+    outline: none;
+    border: none;
+    text-align: center;
+    margin: auto;
+  }
+
+  .change-order:hover  {
+    background-color: lighten(grey, 5%);
+    color: white;
+    text-decoration: none;
+    
+  }
+
+  .change-order:active, .change-order:active:hover {
+    background-color: darken(grey, 5%);
     outline: none;
   }
 
@@ -190,12 +220,13 @@ a {
     border: none;
   }
 
+  .invalid-feedback {
+    color: rgb(255, 100, 100);
+  }
+
   @media(max-width: 1200px) {
       .a1 {
         display: none;;
-      }
-      .a4 {
-        // width: 50px;
       }
   }
 
