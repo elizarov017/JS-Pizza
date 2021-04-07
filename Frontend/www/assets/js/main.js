@@ -388,6 +388,11 @@ $(".brand").click(() => {
 
 });
 
+$(".change-order").click(() => {
+    window.location.href = "../";
+
+});
+
 
 $("#clear-cart").click(function() {
 var newCart = [];
@@ -418,6 +423,8 @@ function updateCart() {
   })
   $(".full_price").text(fullPrice);
 
+  
+
   //Онволення однієї піци
   function showOnePizzaInCart(cart_item) {
       var html_code = Templates.PizzaCart_OneItem(cart_item);
@@ -429,7 +436,7 @@ function updateCart() {
           cart_item.quantity += 1;
           increaseCountCart();
           console.log(cart_item);
-          fullPrice = 
+          
           
           //Оновлюємо відображення
           updateCart();
@@ -520,19 +527,22 @@ $(".filter-name").text(this.getAttribute("text") + " піци");
 filterPizza(filter);
 })
 
-let onload = () => {
-    $(".buy-all").addClass("change-order");
-    $(".buy-all").removeClass("buy-all");
-}
-
 $(".buy-all").click(() => {
-    window.location.href = "/order.html";
-    
-    window.onload(() => { 
-        
-    });
-    
+    console.log($(".full_price").text() == 0);
+    if($(".full_price").text() == 0) alert("Ви нічого не додали до кошику"); 
+    else window.location.href = "/order.html";
 });
+
+// let onload = () => {
+//     $(".buy-all").addClass("change-order");
+//     $(".buy-all").removeClass("buy-all");
+// }
+
+// document.querySelector('.myValidate').addEventListener('keyup', function(){
+//     this.value = this.value.replace(/[^\d]/g, '');
+// });
+
+
 
 function filterPizza(filter) {
   //Масив куди потраплять піци які треба показати

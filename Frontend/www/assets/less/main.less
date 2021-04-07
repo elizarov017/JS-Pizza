@@ -136,29 +136,7 @@ a {
   }
 
 
-  .buy-all, .buy-all:focus {
-    box-sizing: border-box;
-    color: white;
-    font-size: large;
-    background-color: @mainColor;
-    outline: none;
-    border: none;
-    text-align: center;
-    margin: auto;
-    
-  }
-
-  .buy-all:hover  {
-    background-color: lighten(@mainColor, 5%);
-    color: white;
-    text-decoration: none;
-    
-  }
-
-  .buy-all:active, .buy-all:active:hover {
-    background-color: darken(@mainColor, 5%);
-    outline: none;
-  }
+  
 
   .change-order, .change-order:focus{
     box-sizing: border-box;
@@ -220,8 +198,57 @@ a {
     border: none;
   }
 
-  .invalid-feedback {
-    color: rgb(255, 100, 100);
+  input {
+    font-size: large;
+    
+  }
+
+  input:focus:required:invalid {
+    border-color: rgb(226, 74, 74);
+    box-shadow: none;
+}
+
+  .order-info {
+    padding-bottom: 15px;
+    border-radius: 3%;
+    background-color: white;
+    border: solid 2px whitesmoke;
+    border-left: solid 5px @mainColor;
+    font-size: 16px;
+  }
+  
+  
+
+  .smpl, .smpl:focus {
+    box-sizing: border-box;
+    color: white;
+    font-size: large;
+    background-color: @mainColor;
+    outline: none;
+    border: none;
+    text-align: center;
+    margin: auto;
+    
+  }
+
+  .smpl:hover  {
+    background-color: lighten(@mainColor, 5%);
+    color: white;
+    text-decoration: none;
+    
+  }
+
+  .smpl:active, .smpl:active:hover {
+    background-color: darken(@mainColor, 5%);
+    outline: none;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .no-change button {
+    visibility: hidden;
   }
 
   @media(max-width: 1200px) {
